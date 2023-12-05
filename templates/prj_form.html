@@ -1,0 +1,14 @@
+<h3 class="text-secondary">Create a New Project</h3>
+<form action="" method="post" class="mt-5">
+{{ prj_form.hidden_tag() }}
+    <div class="row">
+        <div class="col">
+            {{ prj_form.prj_description(class='form-control', placeholder='Insert here a name for your next project') }}
+        </div>
+    </div>
+    <div class="row mt-3">
+        <div class="col">
+            {{ prj_form.prj_submit(class='btn btn-primary') }}
+        </div>
+    </div>
+</form>

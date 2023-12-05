@@ -1,0 +1,23 @@
+<h3 class="text-secondary">Completed Projects</h3>
+<ul class="list-group mt-5">
+    {% for project in done_projects %}
+    <li class="shadow list-group-item">
+        <div class="row">
+            <div class="col-8">
+                <span class="badge rounded-pill bg-primary ">PRJ-{{ project.id }}</span>
+                <span>{{project.description }}</span>
+            </div>
+            <div class="col-4 text-end">
+                                <span><a class="btn btn-outline-danger btn-sm" role="button"
+                                         href="{{ url_for('remove_project', proj_id=project.id) }}">Delete</a> </span>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <span class="badge rounded-pill bg-primary ">{{project.completed_date }}</span>
+            </div>
+        </div>
+    </li>
+    {% endfor %}
+</ul>
+</div>

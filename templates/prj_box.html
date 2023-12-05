@@ -1,0 +1,16 @@
+<h3 class="text-secondary">Your active projects</h3>
+<ul class="list-group mt-5">
+    {% for project in all_projects %}
+    <li class="shadow list-group-item">
+        <div class="row">
+            <div class="col-8">
+                <span class="badge rounded-pill bg-primary ">PRJ-{{ project.id }}</span>
+                <span>{{ project.description }}</span>
+            </div>
+            <div class="col-4 text-end">
+                <span><a class="mb-3 btn btn-outline-success btn-sm" role="button" href="{{ url_for('complete_project', proj_id =project.id) }}">Done</a> </span>
+            </div>
+        </div>
+    </li>
+    {% endfor %}
+</ul>

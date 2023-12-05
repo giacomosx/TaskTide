@@ -1,0 +1,24 @@
+<h3 class="text-secondary">Your next Tasks</h3>
+<ul class="list-group mt-5">
+    {% for task in all_tasks %}
+    <li class="shadow list-group-item">
+        <div class="row">
+            <div class="col-8">
+                <span>{{ task.description }}</span>
+            </div>
+            <div class="col-4 text-end">
+                <span><a class="mb-3 btn btn-outline-success btn-sm" role="button" href="{{ url_for('complete_task', task_id =task.id) }}">Done</a> </span>
+                <span><a class="mb-3 btn btn-outline-danger btn-sm" role="button" href="{{ url_for('remove_task', task_id =task.id) }}">Delete</a> </span>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <span class="badge rounded-pill bg-primary ">PRJ-{{ task.project.id }}</span>
+                <span class="badge rounded-pill bg-primary ">{{ task.responsible }}</span>
+                <span class="badge rounded-pill bg-primary ">{{ task.due_date }}</span>
+                <span class="badge rounded-pill bg-primary ">P{{ task.priority }}</span>
+            </div>
+        </div>
+    </li>
+    {% endfor %}
+</ul>
